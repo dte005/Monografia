@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{%block oportunidades%}
+<main role="main" class="container">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary rounded shadow-sm">
+    <!--<img class="mr-3" src="assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">-->
+    <div class="lh-100">
+      <h6 class="mb-0 text-white lh-100">Detalhes da ordem de serviço</h6>
+      <small>Lawebsi</small>
+    </div>
+  </div>
+
+  <!--Primeiro Container-->
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">OS</th>
+          <th scope="col">Título</th>
+          <th scope="col">Recurso</th>
+          <th scope="col">Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{detalhes.os_numero}}</th>
+          <th scope="row">{{detalhes.os_nome}}</th>
+          <td><span class="badge badge-pill bg-light align-text-bottom">{{detalhes.os_recurso}}</span></td>
+          <td><span class="badge badge-pill bg-light align-text-bottom">{{detalhes.os_descricao}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-primary badge badge-pill">Close</button>
+  </div>
+{%endblock%}

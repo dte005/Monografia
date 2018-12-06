@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{%block oportunidades%}
+<!---->
+<main role="main" class="container">
+  <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-secondary rounded shadow-sm">
+    <!--<img class="mr-3" src="assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">-->
+    <div class="lh-100">
+      <h6 class="mb-0 text-white lh-100">Ordens de Serviço</h6>
+      <small>Lawebsi</small>
+    </div>
+  </div>
+
+  <!--Primeiro Container-->
+  <div class="my-3 p-3 bg-white rounded shadow-sm">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">OS</th>
+          <th scope="col">Título</th>
+          <th scope="col">Tabela de Recurso</th>
+          <th scope="col">GDG</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Qualidade</th>
+          <th scope="col">Segurança</th>
+          <th scope="col">Relatório</th>
+          <th scope="col">Despesas</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ordem in lista %}
+        <tr>
+          <th scope="row">{{ordem.os_numero}}</th>
+          <th scope="row"><a href="{% url 'os_detalhes' ordem.os_numero %}">{{ordem.os_nome}}</a></th>
+          <td><a href="{% url 'lista_recurso' 1 %}"><button type="button" class="btn btn-primary">Adicionar</button></a><span class="badge badge-pill bg-light align-text-bottom">0</span></td>
+          <td><button type="button" class="btn btn-primary">+</button></td>
+          <td><span class="badge badge-pill bg-light align-text-bottom">Indefinido</span></td>
+          <td><span class="badge badge-pill bg-light align-text-bottom">Indefinido</span></td>
+          <td><span class="badge badge-pill bg-light align-text-bottom">Indefinido</span></td>
+          <td><button type="button" class="btn btn-primary badge badge-pill">+</button><span class="badge badge-pill bg-light align-text-bottom">NR</span></td>
+          <td><button type="button" class="btn btn-primary badge badge-pill">+</button><span class="badge badge-pill bg-light align-text-bottom">NR</span></td>
+        </tr>
+        {%endfor%}
+      </tbody>
+    </table>
+  </div>
+  <!--fim do primeiro container-->
+{%endblock%}
